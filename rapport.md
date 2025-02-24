@@ -7,7 +7,7 @@
 2. [Installation de l’OS](#installation-de-los)
 3. [Préparation du système](#préparation-du-système)
 4. [À propos de la distribution Debian](#à-propos-de-la-distribution-debian)
-5. [Installation de l’OS](#installation-de-los)
+5. [Installation préconfigurée](#installation-préconfigurée)
 
 ## Préparation de la machine virtuelle
 
@@ -136,25 +136,28 @@ générique (= les types de distribution).
 actuelle (Debian 12) se nomme bookworm. D’où viennent les noms de code données aux
 distributions ?
 > Les noms de chaque distribution debian viennent des différents noms des personnages de **Toy Story**. La 1ere version de Debian s’appelait buzz en référence a Buzz l’éclair qui est un personnage phare de l’univers de Toy Story. Ainsi dans l’ordre, nous avons:
-1. Buzz 
-2. Rex
-3. Bo, 
-4. Hamm, 
-5. Slink, 
-6. Potato, 
-7. Woody, 
-8. Sarge, 
-9. Etch, 
-10. Lenny, 
-11. Squeeze, 
-12. Wheezy, 
-13. Jessie, 
-14. Stretch, 
-15. Buster, 
-16. Bullseye, 
-17. Bookworm, 
-18. Trixie, 
-19. Sid.
+
+| Version Debian | Nom |
+---|---|
+| 1 | Buzz |
+| 2 | Rex |
+|3 | Bo 
+|4 | Hamm
+| 5 | Slink 
+| 6 | Potato 
+|7 | Woody 
+| 8 | Sarge |
+| 9 | Etch 
+|10| Lenny
+|11| Squeeze
+|12| Wheezy
+|13| Jessie
+|14| Stretch
+|15| Buster
+|16| Bullseye
+|17| Bookworm
+|18| Trixie
+|19| Sid
 > **Le fait d’utiliser les noms des personnages de Toy Story viens de Bruce Perens et travaillait à l’époque chez Pixar qui est en charge des films Toy Story**.
 
 *  L’un des atouts de Debian fut le nombre d’architecture (≈ processeurs) officiellement prises en
@@ -179,4 +182,4 @@ charge. Combien et lesquelles sont prises en charge par la version Bullseye ?
 *  Dernière nom de code attribué
     *
     *
-    * 
+    *
