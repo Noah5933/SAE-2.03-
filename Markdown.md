@@ -8,7 +8,7 @@ Mélange des 2 : **_mot_**
 
 Exposant : <sup>mot</sup>
 
-Souslignage : [Underline]{.underline} avec classe ou <ins>mot</ins>
+Souslignage : [Underline]{.underline} avec classe ou <ins>mot</ins> ou ++mot++
 
 Surlignage : [Mark]{.mark} avec classe ou ==Mot== ou <mark>mot</mark>
 
