@@ -1,7 +1,7 @@
 # **Rapport SAÉ 2.03**
 ---
 
-## Sommaire
+## ++Sommaire++
 
 1. [Préparation de la machine virtuelle](#préparation-de-la-machine-virtuelle)
 2. [Installation de l’OS](#installation-de-los)
@@ -9,11 +9,60 @@
 4. [À propos de la distribution Debian](#à-propos-de-la-distribution-debian)
 5. [Installation préconfigurée](#installation-préconfigurée)
 
-## Préparation de la machine virtuelle
+# ++Préparation de la machine virtuelle++
 
-```
-Texte sur la préparation
-```
+## Étape 1 : Installer Oracle VirtualBox  
+
+Si ce n’est pas déjà fait, veuillez télécharger le logiciel Oracle VirtualBox à l’adresse suivante : https://www.virtualbox.org/wiki/Downloads . 
+
+Installez-le et lancez le logiciel. 
+
+Après quelque seconde ou minute, vous devriez avoir un menu semblable à celui-ci :  
+
+![](https://projetcartylion.fr/wp-content/uploads/2020/08/Placeholder-300x300.png)
+
+Félicitation ! Vous avez installé Oracle VirtualBox avec succès et pouvez désormais passer à l’étape suivante de ce guide d’installation !  
+
+## Étape 2 : Création une nouvelle machine virtuelle :  
+
+Dans cette étape, vous allez apprendre à configurer votre 1ere machine virtuelle, pour ce faire commencer par cliquer sur le bouton « Nouvelle » situé en haut au milieu. 
+
+Une nouvelle fenêtre s’ouvre à vous et devrait ressembler à ça :  
+
+ ![](https://projetcartylion.fr/wp-content/uploads/2020/08/Placeholder-300x300.png)
+
+Ajoutez-lui ensuite un nom, faites attention à bien lui donner un nom distinctif, ici on a donc mis **sae203**. 
+
+Par défaut, le logiciel utilise un chemin prédéfini pour installer la machine virtuelle, ce chemin est : C:\Users\*nom_utilisateur*\VirtualBox VMs 
+
+Il faut le changer en C:\Users\*nom_utilisateur*\VirtualBox, pour l'auto-installation future.
+
+Ce chemin est sélectionné par défaut mais peut être changé à votre guise. 
+
+Dans la sous étape, nous allons nous baser sur la distribution Debian de Linux et nous avons pris Debian 64-bit de nom de code "bookworm".
+
+Ensuite cliquez sur « Type » et sélectionner « linux » puis cliquez sur « subtype » et sélectionné « Debian (64-bit)». Ceci fait, le logiciel sélectionnera une version de base en 64bit. 
+
+Appuyez désormais sur « finish ». 
+
+## Étape 3 : Configuration de la machine virtuelle :  
+
+Maintenant que votre machine virtuelle est créée, vous devez la paramétrer. 
+
+Pour ce faire, cliquez sur votre machine virtuelle fraichement créer et sélectionner « Configuration » 
+
+Une nouvelle fenêtre devrait s’ouvrir et ressembler à ça :  
+
+![](https://projetcartylion.fr/wp-content/uploads/2020/08/Placeholder-300x300.png)
+
+Par défaut, le logiciel utilise des paramètres demandant peu de ressources pour fonctionner sur le PC les moins performant, si votre PC est puissant alors je vous conseille de modifier ces paramètres : Descendez dans « system » et augmentez la mémoire jusque 2048 Mo et 20 Go de stockage.
+
+Ensuite, vous aller installer le système d’exploitation que vous souhaitez, pour ce faire cliquez sur l’onglet « Stockage » et sélectionné le petit disque bleu en dessous de « contrôleur IDE » et sélectionné une nouvelle fois le disque bleu, puis appuyez sur l’option « Choose a disk file » comme dans l’image indiqué ci-contre :  
+
+![](https://projetcartylion.fr/wp-content/uploads/2020/08/Placeholder-300x300.png)
+
+Ensuite sélectionné l’image disque contenant votre système d’exploitation et appuyez sur « OK », dans notre cas ça sera l'ISO disponible sur le site officiel de Debian (donc Debian 12). 
+
 * Que signifie “64-bit” dans “Debian 64-bit” ?
 
 > 64 bits signifie que c’est un logiciel fait pour un [processeur de type *64 bits*](https://fr.wikipedia.org/wiki/Processeur_64_bits), un processeur plus
@@ -48,7 +97,29 @@ CPU count = 1, car nous n’avons assigné qu’un **seul processeur à la VM**.
 
 ---
 
-## Installation de l'OS
+## ++Installation de l'OS++
+
+Lancez votre machine virtuelle, vous allez pouvoir lancer l'installation de votre système d'exploitation.
+Pour celà, au fur et à mesure vous allez devoir insérer les informations qui suivent :
+
+* Le nom de la machine sera "serveur"
+* Pas de domaine à mettre
+* Le pays et la langue sera France/Français
+* Avec le miroir de Polytech http://debian.polytech-lille.fr sans proxy
+* Création des utilisateurs User avec login user et mot de passe user, et du root avec mot de passe root
+* Sélections des logiciels de démarrage :
+    - [x] Environnement de bureau Debian
+    - [ ] GNOME
+    - [ ] Xfce
+    - [ ] bureau GNOME Flashback
+    - [ ] KDE Plasma
+    - [ ] Cinnamon
+    - [x] MATE
+    - [ ] LXDE
+    - [ ] LXQt
+    - [x] serveur web
+    - [x] serveur SSH
+    - [x] utilitaires usuels du système
 
 *  Qu’est-ce qu’un fichier iso bootable ?
 > Un fichier ISO est un fichier **qui remplace un CD/DVD**. Il permet l’exécution de programme
@@ -74,7 +145,7 @@ ajoutant une couche de sécurité supplémentaire** (it-connect, support-apple, 
 
 ---
 
-## Préparation du système
+## ++Préparation du système++
 * Comment peux-ton savoir à quels groupes appartient l’utilisateur user ?
 > Effectuer la commande suivante dans un terminal Linux : **groups user**, qui donne tous les groupes
 auxquels appartient user : 
@@ -83,7 +154,7 @@ auxquels appartient user :
 > On retrouve bien le groupe sudo après y avoir ajouté user.
 ---
 
-## À propos de la distribution Debian
+## ++À propos de la distribution Debian++
 
 * Quel est la version du noyau Linux utilisé par votre VM ? N’oubliez pas, comme pour toutes les
 questions, de justifier votre réponse.
@@ -111,12 +182,12 @@ fichiers déjà existant**. Elle peut être utilisée pour que des périphériqu
 USB, CD/DVD ...) soient **accessibles à l’utilisateur et à l’ensemble du système**.
 
 ---
-## Installation préconfigurée
+## ++Installation préconfigurée++
 
 * Qu’est-ce que le Projet Debian ? D’où vient le nom Debian ?
 > Le projet Debian est un **groupe mondial de volontaires** qui s'efforcent de produire un **système d'exploitation qui soit composé exclusivement de logiciels libres**. Le principal produit de ce projet est la distribution Debian GNU/Linux, qui inclut le noyau Linux ainsi que des milliers d'applications préempaquetées, **d’après le site officiel**.
 
-> Le nom Debian provient d’une **concaténation** entre les parties des prénoms du créateur et sa petite amie de l’époque (**Ian Murdock et Debra Lynn → Deb Ian)**.
+> Le nom Debian provient d’une **concaténation** entre les parties des prénoms du créateur et sa petite amie de l’époque (**==Ian== Murdock et ==Deb==ra Lynn → Deb Ian)**.
 
 * Il existe 3 durées de prise en charge (support) de ces versions : la durée minimale, la durée en
 support long terme (LTS) et la durée en support long terme étendue (ELTS). Quelle sont les durées
@@ -155,7 +226,7 @@ distributions ?
 |14| Stretch
 |15| Buster
 |16| Bullseye
-|17| Bookworm
+|17| ==Bookworm==
 |18| Trixie
 |19| Sid
 > **Le fait d’utiliser les noms des personnages de Toy Story viens de Bruce Perens et travaillait à l’époque chez Pixar qui est en charge des films Toy Story**.
@@ -183,3 +254,7 @@ charge. Combien et lesquelles sont prises en charge par la version Bullseye ?
     *
     *
     *
+
+Note de bas de page[^ref]
+
+[^ref]: Description note de bas de page
