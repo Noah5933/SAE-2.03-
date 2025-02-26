@@ -23,7 +23,7 @@ Après quelque seconde ou minute, vous devriez avoir un menu semblable à celui-
 
 Félicitation ! Vous avez installé Oracle VirtualBox avec succès et pouvez désormais passer à l’étape suivante de ce guide d’installation !  
 
-## Étape 2 : Création une nouvelle machine virtuelle :  
+## Étape 2 : Création une nouvelle machine virtuelle :  
 
 Dans cette étape, vous allez apprendre à configurer votre 1ere machine virtuelle, pour ce faire commencer par cliquer sur le bouton « Nouvelle » situé en haut au milieu. 
 
@@ -55,7 +55,11 @@ Une nouvelle fenêtre devrait s’ouvrir et ressembler à ça :
 
 ![](https://projetcartylion.fr/wp-content/uploads/2020/08/Placeholder-300x300.png)
 
-Par défaut, le logiciel utilise des paramètres demandant peu de ressources pour fonctionner sur le PC les moins performant, si votre PC est puissant alors je vous conseille de modifier ces paramètres : Descendez dans « system » et augmentez la mémoire jusque 2048 Mo et 20 Go de stockage.
+Par défaut, le logiciel utilise des paramètres demandant peu de ressources pour fonctionner sur le PC les moins performant, si votre PC est puissant alors je vous conseille de modifier ces paramètres :
+
+ ![](https://projetcartylion.fr/wp-content/uploads/2020/08/Placeholder-300x300.png)
+
+Descendez dans « system » et augmentez la mémoire jusque 2048 Mo et 20 Go de stockage.
 
 Ensuite, vous aller installer le système d’exploitation que vous souhaitez, pour ce faire cliquez sur l’onglet « Stockage » et sélectionné le petit disque bleu en dessous de « contrôleur IDE » et sélectionné une nouvelle fois le disque bleu, puis appuyez sur l’option « Choose a disk file » comme dans l’image indiqué ci-contre :  
 
@@ -121,6 +125,8 @@ Pour celà, au fur et à mesure vous allez devoir insérer les informations qui 
     - [x] serveur SSH
     - [x] utilitaires usuels du système
 
+Maintenant finissez l'installation du système d'exploitation.
+
 *  Qu’est-ce qu’un fichier iso bootable ?
 > Un fichier ISO est un fichier **qui remplace un CD/DVD**. Il permet l’exécution de programme
 comme un système d’exploitation sur une clé USB ( winzip; pc mag).
@@ -146,18 +152,24 @@ ajoutant une couche de sécurité supplémentaire** (it-connect, support-apple, 
 ---
 
 ## ++Préparation du système++
+
+Maintenant que l'installation est finie et que nous avons accès au bureau et au terminal Linux et donc Bash, nous pouvons donc donner les droits Sudo à notre utilisateur. 
+
 * Comment peux-ton savoir à quels groupes appartient l’utilisateur user ?
-> Effectuer la commande suivante dans un terminal Linux : **groups user**, qui donne tous les groupes
-auxquels appartient user : 
+> Effectuer la commande suivante dans un terminal Linux : ```groups user```, qui donne tous les groupes auxquels appartient user : 
 
 `user, cdrom, floppy, sudo, audio, dip, video, users, netdev, lpadmin, scanner`
 > On retrouve bien le groupe sudo après y avoir ajouté user.
----
 
-## ++À propos de la distribution Debian++
+On va maintenant installer des suppléments invités, pour celà nous devons monter nos disques et installer des suppléments de compilation et fichiers.
 
-* Quel est la version du noyau Linux utilisé par votre VM ? N’oubliez pas, comme pour toutes les
-questions, de justifier votre réponse.
+Nous devons d'abord insérer le CD possédant les suppléments et sélectionner "Insérer l'image CD des additions invités", puis exécuter les commandes suivantes : 
+1. `sudo mount /dev/cdrom /mnt` : pour monter le CD.
+2. `sudo /mnt/VBoxLinuxAdditions.run` pour installer nos suppléments.
+
+Puis nous pouvons redémarrer notre machine et voir si les modifications ont bien été prises en compte. 
+
+* Quel est la version du noyau Linux utilisé par votre VM ? N’oubliez pas, comme pour toutes les questions, de justifier votre réponse.
 
 > En effectuant la commande : cat /etc/os-release, on obtient :
 ```
@@ -182,11 +194,12 @@ fichiers déjà existant**. Elle peut être utilisée pour que des périphériqu
 USB, CD/DVD ...) soient **accessibles à l’utilisateur et à l’ensemble du système**.
 
 ---
-## ++Installation préconfigurée++
+
+## ++À propos de la distribution Debian++
 
 * Qu’est-ce que le Projet Debian ? D’où vient le nom Debian ?
 > Le projet Debian est un **groupe mondial de volontaires** qui s'efforcent de produire un **système d'exploitation qui soit composé exclusivement de logiciels libres**. Le principal produit de ce projet est la distribution Debian GNU/Linux, qui inclut le noyau Linux ainsi que des milliers d'applications préempaquetées, **d’après le site officiel**.
-
+> 
 > Le nom Debian provient d’une **concaténation** entre les parties des prénoms du créateur et sa petite amie de l’époque (**==Ian== Murdock et ==Deb==ra Lynn → Deb Ian)**.
 
 * Il existe 3 durées de prise en charge (support) de ces versions : la durée minimale, la durée en
@@ -253,7 +266,12 @@ charge. Combien et lesquelles sont prises en charge par la version Bullseye ?
 *  Dernière nom de code attribué
     *
     *
-    *
+    * 
+
+---
+
+## ++Installation préconfigurée++
+
 
 Note de bas de page[^ref]
 
