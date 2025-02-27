@@ -1,8 +1,0 @@
---iprt-iso-maker-file-marker-bourne-sh=23ce6d41-c540-44cb-8d74-a302ae079612
---volume-id=S203-viso --file-mode=0444 --dir-mode=0555 --no-file-mode --no-dir-mode 
---import-iso=/home/noah/VirtualBox/debian-12.9.0-amd64-netinst.iso --file-mode=0444 --dir-mode=0555 
-isolinux/isolinux.cfg=:must-remove: 'isolinux/isolinux.cfg=isolinux-isolinux.cfg' 
-/isolinux/txt.cfg=:must-remove: '/isolinux/txt.cfg=isolinux-txt-fr.cfg' 
-'/preseed.cfg=preseed-fr.cfg' 
-'/vboxpostinstall.sh=vboxpostinstall.sh' --push-iso=/usr/share/virtualbox/VBoxGuestAdditions.iso /vboxadditions=/ 
---pop
