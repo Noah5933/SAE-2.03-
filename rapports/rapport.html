@@ -573,19 +573,18 @@ a l’installation automatique et la préconfiguration.<br />
 <p>Pour cela nous avons beaucoup eu de problemes liés a la modification
 du preseed, notamment au niveau des installations des logiciels car
 certaines des commandes n’avaient pas les options dans l’ordre correct,
-nous avions d’abord cherché encore et encore mais sans vrai résultat,
-c’est alors qu’en dernier recours nous avons eu recours a l’aide d’une
-IA, qui nous a fait découvrir le probleme.<br />
+nous avions d’abord cherché encore et encore mais sans vrai résultat
+puis nous avons au final réussi a trouver l’erreur<br />
 </p>
 <p>Voici les modifications que nous avons apporté au preseed-fr.cfg
 :<br />
 </p>
-<pre><code>d-i preseed/late_command string cp /cdrom/vboxpostinstall.sh /target/root/vboxpostinstall.sh \
- &amp;&amp; chmod +x /target/root/vboxpostinstall.sh \
- &amp;&amp; /bin/sh /target/root/vboxpostinstall.sh --need-target-bash --preseed-late-command \
- in-target apt-get update &amp;&amp; \
+<p>Ligne 106</p>
+<pre><code>in-target apt-get update &amp;&amp; \
  in-target apt-get install -y git-all sqlite3 curl bash-completion neofetch sudo &amp;&amp; \
  in-target usermod -aG sudo user &amp;&amp; \</code></pre>
+<p>Ligne 83</p>
+<pre><code>tasksel tasksel/first multiselect standard ssh-server mate-desktop</code></pre>
 <hr />
 <h1 id="mise-en-place-de-git">6) ++Mise en place de GIT++ :</h1>
 <hr />

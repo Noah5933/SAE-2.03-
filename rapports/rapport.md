@@ -304,18 +304,22 @@ VERSION_ID = « 12 »
 
 Maintenant que nous avons créé et configuré, nous pouvons nous mettre a l'installation automatique et la préconfiguration. \
 
-Pour cela nous avons beaucoup eu de problemes liés a la modification du preseed, notamment au niveau des installations des logiciels car certaines des commandes n'avaient pas les options dans l'ordre correct, nous avions d'abord cherché encore et encore mais sans vrai résultat, c'est alors qu'en dernier recours nous avons eu recours a l'aide d'une IA, qui nous a fait découvrir le probleme. \
+Pour cela nous avons beaucoup eu de problemes liés a la modification du preseed, notamment au niveau des installations des logiciels car certaines des commandes n'avaient pas les options dans l'ordre correct, nous avions d'abord cherché encore et encore mais sans vrai résultat puis nous avons au final réussi a trouver l'erreur \
 
 Voici les modifications que nous avons apporté au preseed-fr.cfg : \
 
+Ligne 106
 ```
-d-i preseed/late_command string cp /cdrom/vboxpostinstall.sh /target/root/vboxpostinstall.sh \
- && chmod +x /target/root/vboxpostinstall.sh \
- && /bin/sh /target/root/vboxpostinstall.sh --need-target-bash --preseed-late-command \
- in-target apt-get update && \
+in-target apt-get update && \
  in-target apt-get install -y git-all sqlite3 curl bash-completion neofetch sudo && \
  in-target usermod -aG sudo user && \
 ```
+
+Ligne 83
+```
+tasksel tasksel/first multiselect standard ssh-server mate-desktop
+```
+
 
 ---
 
