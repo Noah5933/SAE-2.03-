@@ -357,7 +357,7 @@ git init
 ```
 - ++Lier votre dossier à un dépôt distant++ :
 ```
-git remote add <dossier> <lien Gitlab>
+git remote add <nom_dépôt> <lien Gitlab>
 ```
 - ++Envoyer les fichiers sur le dépôt distant++ :
 ```
