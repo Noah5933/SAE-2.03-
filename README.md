@@ -6,7 +6,7 @@
 
 2. Conversion en html
 
-`pandoc rapport.md --from markdown-yaml_metadata_block -o rapport.html`
+`pandoc rapport.md --template=../templates/templateRapport.html -o rapport.html --toc --toc-depth=2`
 
 3. Conversion en pdf
 
