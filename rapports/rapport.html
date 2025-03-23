@@ -159,8 +159,24 @@ ALLARD-GUERENTE</p></li>
         distribution Debian</a></li>
         <li><a href="#installation-préconfigurée">Installation
         préconfigurée</a></li>
-        <li><a href="#mise-en-place-de-git">Mise en place de
-        GIT</a></li>
+        <li><a href="#mise-en-place-de-git">Mise en place de GIT</a>
+        <ul>
+        <li><a href="#configuration-globale-de-loutil-git">Configuration
+        globale de l’outil git</a></li>
+        <li><a href="#les-interfaces-graphiques-pour-git">Les interfaces
+        graphiques pour git</a></li>
+        <li><a href="#une-autre-interface-graphique-pour-git">Une autre
+        interface graphique pour git</a></li>
+        </ul></li>
+        <li><a href="#la-forge-logicielle-gitea">La forge logicielle
+        Gitea</a>
+        <ul>
+        <li><a href="#quest-ce-que-gitea">Qu’est-ce que Gitea ?</a></li>
+        <li><a href="#installation-de-gitea">Installation de
+        Gitea</a></li>
+        <li><a href="#mise-à-jour-de-gitea">Mise à jour de
+        Gitea</a></li>
+        </ul></li>
         </ul>
 
         </div>
@@ -736,6 +752,8 @@ in-target usermod -aG sudo user &amp;&amp; \</code></pre>
 <pre><code>tasksel tasksel/first multiselect standard ssh-server mate-desktop</code></pre>
 <hr />
 <h1 id="mise-en-place-de-git">Mise en place de GIT</h1>
+<h2 id="configuration-globale-de-loutil-git">Configuration globale de
+l’outil git</h2>
 <p>Nous pouvons maintenant créer un <strong>dépôt GitLab</strong>. Ce
 dépôt sert à <strong>sauvegarder vos fichiers dans un cloud</strong>
 directement <strong>depuis votre machine</strong>, avec de simples
@@ -781,8 +799,266 @@ git commit [-m &quot;Message précisant la raison du commit&quot;]
 git push</code></pre>
 <p>L’idéal maintenant est d’<strong>essayer pour vérifier que tout
 fonctionne correctement</strong>.</p>
+<h2 id="les-interfaces-graphiques-pour-git">Les interfaces graphiques
+pour git</h2>
 <hr />
 <h3 id="questions-4">Questions</h3>
+<ul>
+<li>Qu’est-ce que le logiciel gitk ? Comment se lance-t-il ?<br />
+</li>
+</ul>
+<blockquote>
+<p><a href="https://www.atlassian.com/fr/git/tutorials/gitk">Gitk</a>
+est <strong>un navigateur de dépôt graphique</strong>.<br />
+Il permet d’afficher une <strong>grande quantité d’informations à propos
+du dépôt</strong> tel que l’<strong>historique</strong> des fichiers
+déposés sur le dépôt.<br />
+Gitk se concentre sur la <strong>navigation</strong> et la
+<strong>visualisation</strong> de l’historique du dépôt git.<br />
+</p>
+</blockquote>
+<p><img src="../images/ArbreGit.png" /></p>
+<blockquote>
+<p>Pour <strong>lancer</strong> gitk, il faut tout simplement lancer la
+commande gitk.<br />
+</p>
+</blockquote>
+<ul>
+<li>Qu’est-ce que le logiciel git-gui ? Comment se lance-t-il ?<br />
+</li>
+</ul>
+<blockquote>
+<p><a href="https://git-scm.com/docs/git-gui/fr">Git-gui</a> est une
+autre <strong>interface graphique</strong> pour git.<br />
+Il se concentre cependant sur la <strong>génération</strong> et le
+<strong>perfectionnement</strong> de commit,
+l’<strong>annotation</strong> de fichier et, contrairement à gitk, il ne
+permet pas de visualiser l’historique du dépôt.<br />
+</p>
+</blockquote>
+<p><img src="../images/termEtGitgui.png" /></p>
+<blockquote>
+<p>Pour <strong>lancer</strong> git-gui, il faut lancer la commande git
+gui.<br />
+</p>
+</blockquote>
+<hr />
+<h2 id="une-autre-interface-graphique-pour-git">Une autre interface
+graphique pour git</h2>
+<p>L’interface graphique que nous avons décidé d’utiliser est
+git-cola.<br />
+</p>
+<hr />
+<h3 id="questions-5">Questions</h3>
+<ul>
+<li>Pourquoi avez-vous choisi ce logiciel ?<br />
+</li>
+</ul>
+<blockquote>
+<p>Nous avons choisi git-cola pour sa <strong>simplicité de
+lancement</strong> et son <strong>interface minimaliste mais
+fonctionnelle</strong>.<br />
+</p>
+</blockquote>
+<p><img src="../images/termEtGitcola.png" /></p>
+<blockquote>
+<p>Il se rapproche plus de <strong>git gui</strong> car il se concentre
+sur le <strong>perfectionnement du commit</strong>, et
+<strong>non</strong> sur la visualisation de l’historique.<br />
+Cet outil embarque aussi l’outil <strong>git dag</strong> permettant une
+<strong>visualisation graphique</strong>.<br />
+</p>
+</blockquote>
+<p><img src="../images/gitDagEtArbre.png" /></p>
+<blockquote>
+<p>Nous travaillons sur une seule machine, donc nous n’avons <strong>pas
+besoin d’historique</strong>. De plus, le tout étant en
+<strong>local</strong>, c’est un plus pour ceux ayant une mauvaise
+connexion.</p>
+</blockquote>
+<ul>
+<li>Comment l’avez vous installé ?<br />
+</li>
+</ul>
+<blockquote>
+<p>Nous l’avons installé avec cette commande :<br />
+<br />
+</p>
+</blockquote>
+<pre><code>sudo apt install git-cola</code></pre>
+<ul>
+<li>Comparez-le aux outils inclus avec git et ceux installés
+précédement, ainsi qu’avec les lignes de commandes pures :<br />
+</li>
+</ul>
+<blockquote>
+<p>Il faut <strong>pré-commiter</strong> lorsqu’on veut envoyer un
+fichier, tout comme avec “git add”.<br />
+<strong>Enregistrer un message</strong> de commit est équivalent à “git
+commit -m”message”.<br />
+Ensuite le commit va être envoyé et mis en attente d’un push, tout comme
+“git push”.<br />
+Avoir une <strong>interface graphique</strong> facilite grandement la
+conpréhension de l’utilisation de git.<br />
+De plus, git-cola est compatible avec <strong>Windows</strong>,
+<strong>MacOS</strong> et de nombreuses distributions
+<strong>Linux</strong>.<br />
+Nous avons donc utilisé cet outils en tant qu’<strong>outil
+principal</strong> de gestion graphique git.<br />
+</p>
+</blockquote>
+<hr />
+<h1 id="la-forge-logicielle-gitea">La forge logicielle Gitea</h1>
+<h2 id="quest-ce-que-gitea">Qu’est-ce que Gitea ?</h2>
+<hr />
+<h3 id="questions-6">Questions</h3>
+<ul>
+<li>Qu’est-ce que Gitea ?<br />
+</li>
+</ul>
+<blockquote>
+<p>Gitea est une alternative à GitLab.<br />
+C’est une <strong>forge</strong> (système de gestion de texte) logiciel
+web permettant de gérer <strong>plusieurs dépôts git</strong> et gérer
+les <strong>permissions</strong> à ce dernier.<br />
+Il est 100% open source et est un <strong>fork de Gogs</strong>. La
+communauté a souhaité créer Gitea a cause de décisions étranges de la
+part des développeurs.</p>
+</blockquote>
+<ul>
+<li>À quels logiciels bien connus dans ce domaine peut-on le comparer
+?<br />
+</li>
+</ul>
+<blockquote>
+<p>Gitea peut être comparé à <strong>GitHub</strong> et
+<strong>GitLab</strong>.<br />
+</p>
+</blockquote>
+<ul>
+<li>Qu’est-ce qu’un fork ?<br />
+</li>
+</ul>
+<blockquote>
+<p>Un <strong>fork</strong> (fourchette en français), est une branche
+auxiliaire d’un logiciel.<br />
+Un fork consiste en la <strong>réutilisation</strong> d’un code source
+(un fork se produit souvent avec des logiciel open source) pour produire
+quelque chose de similaire mais différents à la fois.<br />
+Le but est d’avoir une <strong>direction de développement
+différente</strong> pour par exemple <strong>réparer les erreurs des
+anciens développeurs</strong>.<br />
+</p>
+</blockquote>
+<ul>
+<li>De quel logiciel Gitea est-il le fork ? Ce logiciel existe-t-il
+encore ?<br />
+</li>
+</ul>
+<blockquote>
+<p>Gitea est le fork de <strong>Gogs</strong>.<br />
+Bien que Gitea soit désormais une <strong>version améliorée</strong>,
+Gogs existe toujours et il existe même plusieurs entreprises qui
+l’utilisent activement.<br />
+</p>
+</blockquote>
+<hr />
+<h2 id="installation-de-gitea">Installation de Gitea</h2>
+<p>Nous allons installer Gitea à l’aide du binaire.<br />
+Nous allons donc suivre la <a
+href="https://docs.gitea.com/installation/install-from-binary">documentation
+officielle</a>.<br />
+<br />
+Pour commencer, on récupère le paquet et on le rend exécutable :</p>
+<pre><code>wget -O gitea https://dl.gitea.com/gitea/1.23.5/gitea-1.23.5-linux-amd64
+chmod +x gitea
+</code></pre>
+<p>Puis nous devons vérifier la validité du binaire en utilisant une clé
+GPG :</p>
+<pre><code>gpg --keyserver keys.openpgp.org –recv 7C9E68152594688862D62AF62D9AE806EC1592E2
+</code></pre>
+<p>Nous vérifions que la version est supérieure à 2.0 grâce à cette
+commade :</p>
+<pre><code>git --version</code></pre>
+<p>Nous avons obtenu 2.39.5, c’est donc une version valide.<br />
+Nous créons alors un utilisateur « git » qui sera notre exécuteur de
+Gitea :</p>
+<pre><code>adduser \
+--system \
+--shell /bin/bash \
+--comment &#39;Git Version Control&#39; \
+--gid git \
+--home-dir /home/git \
+--create-home \
+git </code></pre>
+<p>Si vous n’utilisez pas systemd, mettre un mot-de-passe est plus sûr
+:</p>
+<pre><code>sudo passwd git</code></pre>
+<p>Nous avons ensuite besoin de créer la structure du dossier Gitea
+:</p>
+<pre><code>sudo mkdir -p /var/lib/gitea/{custom,data,log}
+sudo chown -R git:git /var/lib/gitea/
+sudo chmod -R 750 /var/lib/gitea/
+sudo mkdir /etc/gitea
+sudo chown root:git /etc/gitea
+sudo chmod 770 /etc/gitea</code></pre>
+<p>Puis nous le configurons :</p>
+<pre><code>export GITEA_WORK_DIR=/var/lib/gitea/
+cp gitea /usr/local/bin/gitea</code></pre>
+<p>Enfin nous pouvons lancer Gitea et lancer sa véritable mise en place,
+en tant que git (effectuer la commande : su git, et entrer mot de passe)
+:</p>
+<pre><code>GITEA_WORK_DIR=/var/lib/gitea/ /usr/local/bin/gitea web -c /etc/gitea/app.ini</code></pre>
+<p>Dans votre terminal, vous optiendrez une ligne de ce style :</p>
+<pre><code>AppURL(ROOT_URL) : http://localhost:3000/</code></pre>
+<p>En allant sur ce lien, vous tomberez sur cette page de configuration
+de Gitea :</p>
+<p><img src="../images/ConfigInitiale.png" /></p>
+<p>Nous devons alors modifier ces informations pour notre configuration
+:<br />
+- Database Type : SQLite 3<br />
+Dans la partie compte administrateur :<br />
+- Nom : gitea<br />
+- Courriel : git@localhost<br />
+- Mot de passe gitea<br />
+Puis lancez l’installation.<br />
+</p>
+<p>Une fois celle-ci terminée, vous obtiendrez votre depot Gitea, ou
+vous pourrez ajouter des depots et organisations :</p>
+<p><img src="../images/DepotGitea.png" /></p>
+<p>Vous pouvez ainsi ajouter des utilisateurs qui auront différents
+droits et accès trouvable dans administration du site en haut à droite
+:</p>
+<p><img src="../images/CompteGitea.png" /></p>
+<p>Vous pouvez tout configurer, mettre un autre utilisateur
+administrateur, les restreindre, etc…<br />
+Maintenant vous pouvez effectuer les mêmes actions qu’avec Git,
+n’oubliez pas de bien configurer vos répertoires de travail:<br />
+Exemple :
+<code>git remote add origin http://localhost:3000/gitea/SAE203.git</code><br />
+Pour accéder à notre dépôt distant hors de notre machine virtuelle, nous
+devons ajouter une redirection de port.<br />
+Dans la configuration de notre VM sur VirtualBox, allons dans Réseau
+:</p>
+<p><img src="../images/ReseauVM.png" /></p>
+<p>Puis dans Redirection de ports, nous pouvons ajouter une redirection
+(icône avec +) et y mettre les informations :</p>
+<p><img src="../images/RedirecPortVM.png" /></p>
+<p>Vous pouvez maintenant accéder à votre depot depuis une autre machine
+du réseau.<br />
+Cela ressemble donc à cela :</p>
+<p><img src="../images/visuelGitea.png" /></p>
+<h2 id="mise-à-jour-de-gitea">Mise à jour de Gitea</h2>
+<p>Avant d’effectuer la mise à jour, il est recommandé de faire une
+backup pour eviter une perte des donnees. En cas de problemes ce rendre
+sur <a
+href="https://docs.gitea.com/next/administration/backup-and-restore">cette
+page</a>.<br />
+Pour mettre à jour votre dépôt Gitea, arrêtez votre service Gitea.<br />
+Il vous faut le fichier binaire contenant les informations de la version
+voulue, dans notre cas celui de la version 1.24-dev, puis simplement
+remplacer le fichier binaire déjà présent dans :</p>
+<pre><code>/usr/local/bin/gitea</code></pre>
 <section class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />

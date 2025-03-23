@@ -10,12 +10,4 @@
 
 3. Conversion en pdf
 
-`pandoc rapport.md -t ms -o rapport.pdf`
-
-
-
-Division du travail : 
-
-- Kylian : Gitea
-- Noah : Réponses aux questions
-- Coco : Continuer rapport markdown
+`pandoc rapport.md -t latex -o rapport.html --toc --toc-depth=2`

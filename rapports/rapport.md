@@ -523,12 +523,12 @@ En allant sur ce lien, vous tomberez sur cette page de configuration de Gitea :
 
 ![](../images/ConfigInitiale.png)
 
-Nous devons alors modifier ces informations pour notre configuration :
-- Database Type : SQLite 3
-Dans la partie compte administrateur :
-- Nom : gitea
-- Courriel : git@localhost
-- Mot de passe gitea
+Nous devons alors modifier ces informations pour notre configuration : \
+    - Database Type : SQLite 3  \
+Dans la partie compte administrateur : \
+    - Nom : gitea \
+    - Courriel : git@localhost \
+    - Mot de passe gitea \
 Puis lancez l’installation. \
 
 Une fois celle-ci terminée, vous obtiendrez votre depot Gitea, ou vous pourrez ajouter des depots et organisations :
@@ -540,8 +540,8 @@ Vous pouvez ainsi ajouter des utilisateurs qui auront différents droits et acc�
 ![](../images/CompteGitea.png)
 
 Vous pouvez tout configurer, mettre un autre utilisateur administrateur, les restreindre, etc... \
-Maintenant vous pouvez effectuer les mêmes actions qu’avec Git, n’oubliez pas de bien configurer vos répertoires de travail :
-* Exemple : git remote add origin http://localhost:3000/gitea/SAE203.git
+Maintenant vous pouvez effectuer les mêmes actions qu’avec Git, n’oubliez pas de bien configurer vos répertoires de travail: \
+ Exemple : `git remote add origin http://localhost:3000/gitea/SAE203.git` \
 Pour accéder à notre dépôt distant hors de notre machine virtuelle, nous devons ajouter une redirection de port. \
 Dans la configuration de notre VM sur VirtualBox, allons dans Réseau :
 
@@ -552,7 +552,7 @@ Puis dans Redirection de ports, nous pouvons ajouter une redirection (icône ave
 ![](../images/RedirecPortVM.png)
 
 Vous pouvez maintenant accéder à votre depot depuis une autre machine du réseau. \
-Cela ressemble donc à sa :
+Cela ressemble donc à cela :
 
 ![](../images/visuelGitea.png)
 
