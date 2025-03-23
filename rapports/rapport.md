@@ -14,7 +14,7 @@ Après un instant, vous devriez avoir un menu semblable à celui-ci :  \
 
 ![](../images/menuPrincipal.png)
 
-Félicitation ! Vous avez installé Oracle VirtualBox avec succès et pouvez désormais passer à l’étape suivante de ce guide d’installation !  
+Félicitation ! Vous avez installé Oracle VirtualBox avec succès et pouvez désormais passer à l’étape suivante de ce guide d’installation ! 
 
 ## Étape 2 : Création une nouvelle machine virtuelle
 
@@ -46,7 +46,7 @@ Ceci fait, le logiciel sélectionnera une version de base en 64bit. \
 
 Maintenant que la machine virtuelle est créée, passons aux paramètrages. \
 Pour ce faire, **cliquez sur votre machine virtuelle** fraichement créée et **sélectionnez « Configuration ».** \
-Une nouvelle fenêtre devrait s’ouvrir et ressembler à ça :  
+Une nouvelle fenêtre devrait s’ouvrir et ressembler à ça : 
 
 ![](../images/configSysteme.png)
 
