@@ -406,7 +406,7 @@ L'interface graphique que nous avons décidé d'utiliser est git-cola. \
 
 ![](../images/gitDagEtArbre.png)
 
-> Nous travaillons sur une seule machine, donc nous n'avons **pas besoin d'historique**. De plus, le tout étant en **local**, c'est un plus pour ceux ayant une mauvaise connexion.
+> Nous travaillons sur une seule machine, donc nous n'avons **pas besoin d'historique**. De plus, la documentation étant en **local**, c'est un plus pour ceux ayant une mauvaise connexion.
 
 
 * Comment l’avez vous installé ? \
